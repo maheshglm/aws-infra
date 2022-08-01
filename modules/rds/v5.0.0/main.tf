@@ -58,6 +58,7 @@ module "db" {
   identifier                          = format("rds-%s", local.name)
   engine                              = var.rds_engine
   engine_version                      = var.rds_engine_version
+  major_engine_version                = var.major_engine_version
   instance_class                      = var.rds_instance_class
   allocated_storage                   = var.rds_storage
   max_allocated_storage               = var.max_rds_storage

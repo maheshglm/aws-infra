@@ -265,3 +265,8 @@ variable "create_random_password" {
   type        = bool
   default     = false
 }
+
+variable "major_engine_version" {
+  type = string
+  default = ""
+}

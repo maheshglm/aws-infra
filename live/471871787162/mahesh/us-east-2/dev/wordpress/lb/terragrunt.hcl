@@ -48,10 +48,13 @@ inputs = {
 
   target_groups = [
     {
-      name_prefix      = "asg-"
+      name_prefix      = "wpalb-" //max 6 chars
       backend_protocol = "HTTP"
       backend_port     = 80
       target_type      = "instance"
+#      health_check = {
+#        matcher = "200, 302"
+#      }
     }
   ]
 

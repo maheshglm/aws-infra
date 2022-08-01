@@ -7,8 +7,8 @@ locals {
   }
 }
 
-
 module "lb" {
+
   source  = "terraform-aws-modules/alb/aws"
   version = "6.10.0"
 
