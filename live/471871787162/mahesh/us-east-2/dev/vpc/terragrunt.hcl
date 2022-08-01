@@ -25,7 +25,6 @@ include {
 inputs = {
   customer = local.customer_name
   environment = local.environment_name
-
   unique_id = dependency.unique_id.outputs.id
 
   cidr = "10.0.0.0/16"
@@ -37,6 +36,5 @@ inputs = {
   enable_vpn_gateway            = true
   enable_dns_support            = true
   enable_dns_hostnames          = true
-  create_database_subnet_group  = true
   single_nat_gateway            = true
 }

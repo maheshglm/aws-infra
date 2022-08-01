@@ -117,5 +117,5 @@ variable "default_security_group_tags" {
 variable "create_database_subnet_group" {
   description = ""
   type = bool
-  default = true
+  default = false
 }

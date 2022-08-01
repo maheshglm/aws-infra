@@ -7,7 +7,7 @@ output "azs" {
 # VPC outputs.
 output "vpc_id" {
   value       = module.vpc.vpc_id
-  description = "VPC ID created"
+  description = "The ID of the VPC"
 }
 
 output "private_subnets" {

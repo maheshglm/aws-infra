@@ -8,7 +8,7 @@ locals {
 
 module "security_group" {
   count = length(var.custom_security_groups)
-  source = "terraform-aws-modules/vpc/aws"
+  source = "terraform-aws-modules/security-group/aws"
   version = "4.9.0"
 
   name                     = var.custom_security_groups[count.index].security_group_name
