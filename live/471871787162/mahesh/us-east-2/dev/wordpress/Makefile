@@ -28,8 +28,8 @@ destroy: ## Destroy
 	@cd asg && terragrunt destroy --auto-approve
 	@cd asg_sg && terragrunt destroy --auto-approve
 	@cd asg_keypair && terragrunt destroy --auto-approve
-	@cd lb_sg && terragrunt destroy --auto-approve
 	@cd lb && terragrunt destroy --auto-approve
+	@cd lb_sg && terragrunt destroy --auto-approve
 	@cd mysql && terragrunt destroy --auto-approve
 
 help:
