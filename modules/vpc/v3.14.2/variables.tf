@@ -16,6 +16,12 @@ variable "environment" {
   default     = "defaultEnvironment"
 }
 
+variable "unique_id" {
+  description = "Unique identifier"
+  type        = string
+  default     = "1111"
+}
+
 #https://www.davidc.net/sites/default/subnets/subnets.html
 variable "cidr" {
   description = "The CIDR block for the VPC. Default value is a valid CIDR, but not acceptable by AWS and should be overridden"
@@ -50,9 +56,9 @@ variable "private_subnet_tags" {
 }
 
 variable "database_subnets" {
-  type = list(string)
+  type        = list(string)
   description = "A list of database subnets inside the VPC"
-  default = ["10.0.7.0/24", "10.0.8.0/24", "10.0.9.0/24"]
+  default     = ["10.0.7.0/24", "10.0.8.0/24", "10.0.9.0/24"]
 }
 
 # VPC DNS options
@@ -116,6 +122,6 @@ variable "default_security_group_tags" {
 
 variable "create_database_subnet_group" {
   description = ""
-  type = bool
-  default = false
+  type        = bool
+  default     = false
 }

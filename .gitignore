@@ -1,3 +1,7 @@
 .terragrunt-cache/
 /.idea
 *.pem
+.terraform/
+
+*.tfstate
+*.tfstate.*

@@ -53,7 +53,7 @@ inputs = {
   max_size            = 2
   desired_capacity    = 1
   health_check_type   = "ELB"
-  vpc_zone_identifier = dependency.vpc.outputs.public_subnets
+  vpc_zone_identifier = dependency.vpc.outputs.private_subnets
   target_group_arns   = dependency.lb.outputs.target_group_arns
   use_name_prefix     = true
 
