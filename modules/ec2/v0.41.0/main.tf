@@ -49,6 +49,10 @@ module "ec2" {
   # Monitoring Configurations.
   monitoring = var.monitoring
 
+  ssm_patch_manager_enabled        = var.ssm_patch_manager_enabled
+  ssm_patch_manager_iam_policy_arn = var.ssm_patch_manager_iam_policy_arn
+  ssm_patch_manager_s3_log_bucket  = var.ssm_patch_manager_s3_log_bucket
+
   # Updating tags
   tags = local.tags
 }
