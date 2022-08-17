@@ -11,6 +11,7 @@ customer_name = "mahesh"
 aws_region = "us-east-2"
 
 # environment related variables
-environment = "dev"
+environment                  = "dev"
 environment_domain_zone_name = "dev.letsdevops.link"
 
+acm_cert_arn = "arn:aws:acm:us-east-2:471871787162:certificate/06a8f8c8-96af-4278-934e-a8a3e9d1200f"
