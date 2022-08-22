@@ -1,10 +1,29 @@
 locals {
-  tags = {
+  tags           = {
     customer  = var.customer,
     env       = var.environment,
     unique_id = var.unique_id,
     project   = var.project
   }
+  ssm_key_prefix = format("/%s/%s/%s/%s", var.customer, var.environment, var.project)
+}
+
+module "keypair" {
+  source = "../../keypair/v1.0.1"
+
+  key_name    = format("%s/%s", local.ssm_key_prefix, "private_key")
+  customer    = var.customer
+  environment = var.environment
+  unique_id   = var.unique_id
+}
+
+module "security_group" {
+  source = "../../security_group/v4.9.0"
+
+  customer               = var.customer
+  environment            = var.environment
+  unique_id              = var.unique_id
+  custom_security_groups = var.custom_security_groups
 }
 
 module "asg" {
@@ -26,13 +45,13 @@ module "asg" {
   image_id             = var.image_id
   instance_type        = var.instance_type
   user_data            = base64encode(var.user_data)
-  security_groups      = var.security_groups
-  key_name             = var.key_name
+  security_groups      = module.security_group.security_group_ids
+  key_name             = module.keypair.key_name
 
   tags = merge({
     Terraform = "true"
   },
   local.tags
   )
-
 }
+
