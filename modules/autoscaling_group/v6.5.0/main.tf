@@ -5,7 +5,7 @@ locals {
     unique_id = var.unique_id,
     project   = var.project
   }
-  ssm_key_prefix = format("/%s/%s/%s/%s", var.customer, var.environment, var.project)
+  ssm_key_prefix = format("/%s/%s/%s", var.customer, var.environment, var.project)
 }
 
 module "keypair" {
