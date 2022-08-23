@@ -1,10 +1,15 @@
-#module "unique_id" {
-#  source = "../../modules//unique_id/v1.0.0"
-#}
+provider "aws" {
+  region = var.aws_region
+}
+
+terraform {
+  backend "local" {
+    path          = "terraform.tfstate"
+  }
+}
 
 module "vpc" {
-  source = "../../modules//vpc/v3.14.2"
-
+  source      = "../../../../modules//vpc/v3.14.2"
   customer    = var.customer_name
   environment = var.environment
 

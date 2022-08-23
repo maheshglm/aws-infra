@@ -81,17 +81,14 @@ variable "user_data" {
   description = "user data to provide when launching the instance"
 }
 
-variable "security_groups" {
+# Refer to security_group module on how to populate this variable
+variable "custom_security_groups" {
+  description = "List of user specified security groups"
+  type        = any
   default     = []
-  type        = list(string)
-  description = "A list of security group IDs to associate"
 }
 
-variable "key_name" {
-  default     = null
-  type        = string
-  description = "The key name that should be used for the instance"
-}
+
 
 
 
