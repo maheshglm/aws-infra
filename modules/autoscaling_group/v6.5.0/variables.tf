@@ -88,6 +88,37 @@ variable "custom_security_groups" {
   default     = []
 }
 
+variable "create_iam_instance_profile" {
+  description = "Determines whether an IAM instance profile is created or to use an existing IAM instance profile"
+  type        = bool
+  default     = false
+}
+
+variable "iam_role_name" {
+  description = "Name to use on IAM role created"
+  type        = string
+  default     = null
+}
+
+variable "iam_role_path" {
+  description = "IAM role path"
+  type        = string
+  default     = null
+}
+
+variable "iam_role_description" {
+  description = "Description of the role"
+  type        = string
+  default     = null
+}
+
+
+variable "iam_role_policies" {
+  description = "IAM policies to attach to the IAM role"
+  type        = map(string)
+  default     = {}
+}
+
 
 
 
