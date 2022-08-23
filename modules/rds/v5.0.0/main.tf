@@ -97,6 +97,7 @@ resource "aws_ssm_parameter" "rds_password" {
   name       = var.ssm_rds_password_path
   type       = "SecureString"
   value      = module.db.db_instance_password
+  overwrite  = true
 }
 
 resource "aws_ssm_parameter" "rds_username" {
@@ -104,4 +105,5 @@ resource "aws_ssm_parameter" "rds_username" {
   name       = var.ssm_rds_username_path
   type       = "SecureString"
   value      = module.db.db_instance_username
+  overwrite  = true
 }
