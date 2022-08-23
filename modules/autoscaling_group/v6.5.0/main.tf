@@ -15,6 +15,7 @@ module "keypair" {
   customer    = var.customer
   environment = var.environment
   unique_id   = var.unique_id
+  project     = var.project
 }
 
 module "security_group" {
@@ -24,6 +25,7 @@ module "security_group" {
   environment            = var.environment
   unique_id              = var.unique_id
   custom_security_groups = var.custom_security_groups
+  project                = var.project
 }
 
 module "asg" {
