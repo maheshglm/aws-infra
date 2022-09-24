@@ -48,7 +48,7 @@ variable "create_iam_access_key" {
   description = "Whether to create IAM access key"
 }
 
-variable "permissions_boundary" {
+variable "iam_policy_arn" {
   type        = string
   description = "The ARN of the policy that is used to set the permissions boundary for the user"
   default     = ""

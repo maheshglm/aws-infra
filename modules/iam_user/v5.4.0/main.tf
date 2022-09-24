@@ -15,7 +15,7 @@ module "iam_user" {
   path                          = var.iam_user_path
   create_iam_access_key         = var.create_iam_access_key
   create_iam_user_login_profile = var.create_iam_user_login_profile
-  permissions_boundary          = var.permissions_boundary
+  permissions_boundary          = var.iam_policy_arn
   force_destroy                 = var.force_destroy
 
   tags = merge({
@@ -58,6 +58,7 @@ resource "aws_ssm_parameter" "iam_access_key_secret" {
 }
 
 resource "aws_iam_user_policy_attachment" "aws_access" {
+  count      = var.iam_policy_arn != "" ? 1 : 0
   user       = module.iam_user.iam_user_name
-  policy_arn = var.permissions_boundary
+  policy_arn = var.iam_policy_arn
 }
