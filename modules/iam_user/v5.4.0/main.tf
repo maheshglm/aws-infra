@@ -15,7 +15,7 @@ module "iam_user" {
   path                          = var.iam_user_path
   create_iam_access_key         = var.create_iam_access_key
   create_iam_user_login_profile = var.create_iam_user_login_profile
-  iam_policy_arn                = var.iam_policy_arn
+  permissions_boundary          = var.permissions_boundary
   force_destroy                 = var.force_destroy
 
   tags = merge({
