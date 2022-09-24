@@ -48,7 +48,7 @@ variable "create_iam_access_key" {
   description = "Whether to create IAM access key"
 }
 
-variable "iam_policy_arn" {
+variable "permissions_boundary" {
   type        = string
   description = "The ARN of the policy that is used to set the permissions boundary for the user"
   default     = ""
@@ -64,4 +64,11 @@ variable "password_reset_required" {
   type        = bool
   default     = false
   description = "Whether the user should be forced to reset the generated password on first login"
+}
+
+
+variable "iam_policy_arn" {
+  type        = string
+  description = "The ARN of the policy to attach to this user"
+  default     = ""
 }
