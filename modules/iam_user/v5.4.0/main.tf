@@ -59,5 +59,5 @@ resource "aws_ssm_parameter" "iam_access_key_secret" {
 
 resource "aws_iam_user_policy_attachment" "aws_access" {
   user       = module.iam_user.iam_user_name
-  policy_arn = var.iam_policy_arn
+  policy_arn = var.permissions_boundary
 }
