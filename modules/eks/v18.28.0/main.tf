@@ -25,7 +25,7 @@ provider "kubernetes" {
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "18.29.0"
+  version = "18.28.0"
 
   cluster_version                 = var.eks_cluster_version
   cluster_name                    = local.eks_cluster_name
@@ -39,7 +39,6 @@ module "eks" {
   self_managed_node_groups         = var.self_managed_node_groups
   eks_managed_node_group_defaults  = var.eks_managed_node_group_defaults
   eks_managed_node_groups          = var.eks_managed_node_groups
-
 
   enable_irsa               = var.enable_irsa
   manage_aws_auth_configmap = var.manage_aws_auth_configmap
