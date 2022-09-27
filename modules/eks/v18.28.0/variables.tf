@@ -25,7 +25,7 @@ variable "unique_id" {
 variable "eks_vpc_id" {
   description = "VPC ID of the EKS Cluster to be provisioned into"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "eks_private_subnets_ids" {
