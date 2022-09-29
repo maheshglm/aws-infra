@@ -41,7 +41,7 @@ output "vpc_cidr_block" {
 }
 
 output "database_subnets" {
-  value = module.vpc.database_subnets
+  value       = module.vpc.database_subnets
   description = "List of IDs of database subnets"
 }
 
